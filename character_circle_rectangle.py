@@ -20,7 +20,7 @@ def run_circle():   # 원운동
 #    print('CIRCLE')
 #    원 회전
     cx, cy, r = 400, 300, 200
-    for deg in range(0,360,1):
+    for deg in range(0,360, 3):
         x = cx + r * math.cos(math.radians(deg))
         y = cy + r * math.sin(math.radians(deg))
         render_frame(x, y)
@@ -65,3 +65,6 @@ close_canvas()
     # 역시 "test read time"을 줄이기 위함
 # Tip. 반복되는 코드 식별 시, 함수로 선언 후 반복사용한다
 # Tip. 수정된 코드가 앞 코드를 건드릴 경우, 잘 동작하는지 재확인한다.
+
+# 한줄 추가하고 확인하고 커밋하고...반복
+# 영어실력 향상!!
