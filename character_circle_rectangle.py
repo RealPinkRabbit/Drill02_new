@@ -1,33 +1,32 @@
 from pico2d import *
 import math
 
-# import os
-# os.chdir('C:\\GithubFiles\\2020152020DONGGEUN\\Drill02_new')
+#import os
+#os.chdir('C:\\GithubFiles\\2020152020DONGGEUN\\Drill02_new')
 
 open_canvas()
 
 grass = load_image('grass.png')
 character = load_image('character.png')
 
-def render_frame(x, y):
+def render_frame(x, y): # (x, y) 좌표에 이미지 렌더링
     clear_canvas_now()
     grass.draw_now(400, 30)
     character.draw_now(x, y)
     delay(0.01) 
     
 
-def run_circle():
-    print('CIRCLE')
-
-    # 원 회전
+def run_circle():   # 원운동
+#    print('CIRCLE')
+#    원 회전
     cx, cy, r = 400, 300, 200
     for deg in range(0,360,1):
         x = cx + r * math.cos(math.radians(deg))
         y = cy + r * math.sin(math.radians(deg))
         render_frame(x, y)
 
-def run_rectangle():
-    print('RECTANGLE')
+def run_rectangle():    # 네모운동
+#    print('RECTANGLE')
     
     for x in range(50, 750+1, 10):
         render_frame(x, 90)
@@ -41,8 +40,10 @@ def run_rectangle():
     for y in range(550, 90-1, -10):
         render_frame(50, y)
 
+### main ###
+        
 while True:
-    #run_circle()
+    run_circle()
     run_rectangle()
     break;
 
@@ -62,5 +63,5 @@ close_canvas()
     # "test read time"을 줄이기 위함
 # Tip. 특정 코드(한/두줄 코드)가 정확히 동작하는 것을 확인할 때 IDLE Shell을 이용한다.
     # 역시 "test read time"을 줄이기 위함
-# Tip. 반복되는 코드가 보일 시, 함수로 선언하여 사용한다
+# Tip. 반복되는 코드 식별 시, 함수로 선언 후 반복사용한다
 # Tip. 수정된 코드가 앞 코드를 건드릴 경우, 잘 동작하는지 재확인한다.
